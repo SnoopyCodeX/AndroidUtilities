@@ -3,7 +3,7 @@
 
 ## LICENSE
 ```
-		Copyright 2020 SnoopyCodeX|Cyber Droid Developers PH
+		Copyright 2020 SnoopyCodeX | Cyber Droid Developers PH
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
