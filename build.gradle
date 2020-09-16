@@ -18,12 +18,6 @@ allprojects {
     }
 }
 
-clean {
+task clean(type: Delete) {
     delete rootProject.buildDir
 }
-
-task customClean(type: Delete) {
-    delete rootProject.buildDir
-}
-
-clean.dependsOn customClean
