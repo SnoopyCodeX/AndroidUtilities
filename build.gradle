@@ -1,3 +1,6 @@
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
@@ -17,8 +20,6 @@ allprojects {
         jcenter()
     }
 }
-
-apply plugin: 'maven'
 
 task customClean(type: Delete) {
     delete rootProject.buildDir
