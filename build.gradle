@@ -12,13 +12,13 @@ buildscript {
     }
 }
 
-apply plugin: 'maven'
-
 allprojects {
     repositories {
         jcenter()
     }
 }
+
+apply plugin: 'maven'
 
 task customClean(type: Delete) {
     delete rootProject.buildDir
