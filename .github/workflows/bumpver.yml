@@ -20,10 +20,18 @@ jobs:
         WITH_V: true
         INITIAL_VERSION: 1.0.1
     - name: Get tag_version and store to env
-      run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF#refs/*/}
-    - name: Create release
-      uses: ncipollo/release-action@v1
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        name: ${{ env.RELEASE_VERSION }}
-        tag: ${{ env.RELEASE_VERSION }}
+      run: echo ::set-env name=cdph_ver::${GITHUB_REF#refs/*/}
+    - name: Test Release version
+      run: |
+         echo $cdph_ver
+         echo ${{ env.cdph_ver }}
+    - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.cdph_ver }}
+          release_name: Release ${{ env.cdph_ver }}
+          draft: false
+          prerelease: false
