@@ -17,7 +17,6 @@
 package com.cdph.util.font;
 
 import java.io.File;
-
 import static com.cdph.util.io.FileUtils.toBytes;
 
 public final class FontUtils
