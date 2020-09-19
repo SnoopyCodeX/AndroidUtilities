@@ -22,9 +22,7 @@ jobs:
     - name: Get tag_version and store to env
       run: echo ::set-env name=cdph_ver::${GITHUB_REF#refs/*/}
     - name: Test Release version
-      run: |
-         echo ${cdph_ver}
-         echo ${{ env.cdph_ver }}
+      run: echo ${{ env.cdph_ver }}
     - name: Create Release
         id: create_release
         uses: actions/create-release@v1
