@@ -18,7 +18,7 @@ jobs:
         WITH_V: true
         INITIAL_VERSION: 1.0.1
     - name: Get tag_version and store to env
-      run: echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:10})
+      run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF#refs/*/}
     - name: Test Release version
       run: echo ${{ env.RELEASE_VERSION }}
     - name: Create Release
