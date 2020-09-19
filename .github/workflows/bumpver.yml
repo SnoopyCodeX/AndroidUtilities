@@ -23,7 +23,7 @@ jobs:
       run: echo ::set-env name=cdph_ver::${GITHUB_REF#refs/*/}
     - name: Test Release version
       run: |
-         echo $cdph_ver
+         echo ${cdph_ver}
          echo ${{ env.cdph_ver }}
     - name: Create Release
         id: create_release
